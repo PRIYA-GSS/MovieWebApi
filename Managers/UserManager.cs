@@ -28,12 +28,12 @@ namespace Managers
 
             return _mapper.Map<dto.User>(user);
         }
-        public async Task<entity.User> AddAsync(dto.User user)
+        public async Task AddAsync(dto.User user)
         {
             var newuser = _mapper.Map<entity.User>(user);
             _mapper.Map(user, newuser);
             await _repo.AddAsync(newuser);
-            return newuser;
+     
         }
         public async Task UpdateAsync(dto.User user)
         {

@@ -1,13 +1,13 @@
 ﻿using dto = Models.DTOs;
 
-namespace Interfaces.IManager
+namespace Interfaces.IService
 {
-    public interface IBookingManager
+    public interface IBookingService
     {
         Task<IList<dto.Booking>> GetAllAsync();
         Task<dto.Booking> GetByIdAsync(int id);
-        Task AddAsync(dto.Booking booking);
-        Task UpdateAsync(dto.Booking booking);
+        Task AddAsync(dto.Booking Booking);
+        Task UpdateAsync(dto.Booking Booking);
         Task DeleteAsync(int id);
     }
 }

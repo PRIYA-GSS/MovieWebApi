@@ -27,12 +27,12 @@ namespace Managers
 
             return _mapper.Map<dto.Booking>(Booking);
         }
-        public async Task<entity.Booking> AddAsync(dto.Booking Booking)
+        public async Task AddAsync(dto.Booking Booking)
         {
             var newBooking = _mapper.Map<entity.Booking>(Booking);
             _mapper.Map(Booking, newBooking);
             await _repo.AddAsync(newBooking);
-            return newBooking;
+           
         }
         public async Task UpdateAsync(dto.Booking Booking)
         {

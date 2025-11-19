@@ -1,14 +1,13 @@
 ﻿using dto = Models.DTOs;
 
-namespace Interfaces.IManager
+namespace Interfaces.IService
 {
-    public interface IUserManager
+    public interface IUserService
     {
         Task<IList<dto.User>> GetAllAsync();
         Task<dto.User> GetByIdAsync(int id);
-        Task AddAsync(dto.User user);
-        Task UpdateAsync(dto.User user);
+        Task AddAsync(dto.User User);
+        Task UpdateAsync(dto.User User);
         Task DeleteAsync(int id);
-
     }
 }
