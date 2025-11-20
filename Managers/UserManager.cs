@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
+using Interfaces.IManager;
 using Interfaces.IRepository;
 using dto = Models.DTOs;
 using entity = DataAccess.Entities;
 
 namespace Managers
 {
-    public class UserManager
+    public class UserManager:IUserManager
     {
         private readonly IBaseRepository<entity.User> _repo;
         private readonly IMapper _mapper;

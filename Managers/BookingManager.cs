@@ -2,9 +2,10 @@
 using Interfaces.IRepository;
 using entity= DataAccess.Entities;
 using dto = Models.DTOs;
+using Interfaces.IManager;
 namespace Managers
 {
-    public class BookingManager
+    public class BookingManager:IBookingManager
     {
         private readonly IBaseRepository<entity.Booking> _repo;
         private readonly IMapper _mapper;

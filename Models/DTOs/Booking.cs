@@ -14,5 +14,11 @@ namespace Models.DTOs
         public DateTime Date { get; set; }
         [Required]
         public decimal Amount { get; set; }
+        [Required]
+        public int UserId { get; set; }
+        [Required]
+        public int TheatreId { get; set; }
+        [Required]
+        public int MovieId { get; set; }
     }
 }

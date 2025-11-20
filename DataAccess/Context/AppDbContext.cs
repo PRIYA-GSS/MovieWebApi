@@ -11,6 +11,10 @@ namespace DataAccess.Context
         public DbSet<Theatre> Theatres { get; set; }
         public DbSet<Booking> Bookings { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MovieWebApiDb;Trusted_Connection=True");
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Movie>()

@@ -17,5 +17,7 @@ namespace Models.DTOs
         [Required]
         [MaxLength(100)]
         public string Location { get; set; }
+        public IList<int> BookingIds { get; set; } = new List<int>();
+        public IList<int> MovieIds { get; set; } = new List<int>();
     }
 }

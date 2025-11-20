@@ -11,19 +11,19 @@ using Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-builder.Services.AddScoped(typeof(IMovieManager), typeof(MovieManager));
-builder.Services.AddScoped(typeof(IBookingManager), typeof(BookingManager));
+//builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddTransient(typeof(IMovieManager), typeof(MovieManager));
+builder.Services.AddTransient(typeof(IBookingManager), typeof(BookingManager));
 
-builder.Services.AddScoped(typeof(IUserManager), typeof(UserManager));
+builder.Services.AddTransient(typeof(IUserManager), typeof(UserManager));
 
-builder.Services.AddScoped(typeof(ITheatreManager), typeof(TheatreManager));
+builder.Services.AddTransient(typeof(ITheatreManager), typeof(TheatreManager));
 
-builder.Services.AddScoped(typeof(IMovieService), typeof(MovieService));
-builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
-builder.Services.AddScoped(typeof(IBookingService), typeof(BookingService));
-builder.Services.AddScoped(typeof(ITheatreService), typeof(TheatreService));
+builder.Services.AddTransient(typeof(IMovieService), typeof(MovieService));
+builder.Services.AddTransient(typeof(IUserService), typeof(UserService));
+builder.Services.AddTransient(typeof(IBookingService), typeof(BookingService));
+builder.Services.AddTransient(typeof(ITheatreService), typeof(TheatreService));
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

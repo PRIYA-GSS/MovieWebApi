@@ -13,5 +13,9 @@ namespace Models.DTOs
         [Required]
         [MaxLength(100)]
         public string Genre { get; set; }
+
+        public List<int> TheatreIds { get; set; } = new List<int>();
+        public List<int> BookingIds { get; set; } = new List<int>();
+
     }
 }

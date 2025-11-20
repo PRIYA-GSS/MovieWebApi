@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
+using Interfaces.IManager;
 using Interfaces.IRepository;
 using dto = Models.DTOs;
 using entity = DataAccess.Entities;
 
 namespace Managers
 {
-    public class TheatreManager
+    public class TheatreManager:ITheatreManager
     {
         private readonly IBaseRepository<entity.Theatre> _repo;
         private readonly IMapper _mapper;

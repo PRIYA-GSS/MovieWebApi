@@ -15,6 +15,7 @@ namespace Models.DTOs
         [Required]
         [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Phone number must be exactly 10 digits.")]
         public string PhoneNumber { get; set; }
+        public IList<int> BookingIds { get; set; } = new List<int>();
     }
 
 
